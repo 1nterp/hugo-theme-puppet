@@ -3,3 +3,7 @@
     font-size: 14px;
   }
 }
+::selection {
+    color:black !important;
+    background-color: rgb(255,222,0) !important;
+}

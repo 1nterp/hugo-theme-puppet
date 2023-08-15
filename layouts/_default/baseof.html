@@ -73,14 +73,14 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-  {{- $header_img := .Param "header_img" -}}
+  {{- $header_img := .Param "image" -}}
   {{- if .IsHome -}}
   {{ $header_img = .Site.Params.img_home }}
   {{- else if eq .Kind "404" -}}
   {{ $header_img = .Site.Params.img_404 }}
   {{- end -}}
   {{- if $header_img -}}
-  {{ .Scratch.Set "header_img" ( $header_img | relURL ) }}
+  {{ .Scratch.Set "header_img" ( $header_img ) }}
   {{- end -}}
 
   {{- if and .IsPage (.Params.toc) }}

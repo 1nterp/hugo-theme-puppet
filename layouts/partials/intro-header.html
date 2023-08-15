@@ -1,10 +1,25 @@
 {{ $header_img := .Scratch.Get "header_img" }}
 
 {{ if .IsPage }}
+{{ $image_y := (default `50%` .Page.Params.image_y) | safeCSS }}
 <style type="text/css">
   header.intro-header {
     position: relative;
+    background-color: #c12b77;
+  }
+  header.intro-header:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
     background-image: url('{{ with $header_img }}{{- . -}}{{ end }}');
+    background-repeat: no-repeat;
+    background-position: 50% {{ $image_y }};
+    background-size: cover;
   }
 </style>
 {{ if $header_img }}
