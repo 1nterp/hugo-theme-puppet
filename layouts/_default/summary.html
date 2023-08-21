@@ -1,4 +1,4 @@
-<div class="post-preview">
+<div class="post-preview" style="background: url('{{ .Permalink | absURL }}{{ .Params.image }}') no-repeat 50% 50%; background-size: cover;">
   <a href="{{ .RelPermalink }}">
       <h2 class="post-title">{{ .Title }}</h2>
       {{ with .Params.subtitle }}
@@ -12,7 +12,7 @@
       </div>
   </a>
   <p class="post-meta">
-      Posted by {{ with $.Params.author }} {{ $.Params.author }} {{ else }} {{ .Site.Params.author }} {{ end }} on {{ .Date.Format "Mon, Jan 2, 2006" }}
+      {{ .Date.Format "2006년 1월 2일 월요일" }}
   </p>
 </div>
 <hr>

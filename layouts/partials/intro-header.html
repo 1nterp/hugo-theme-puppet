@@ -7,7 +7,7 @@
     position: relative;
     background-color: #c12b77;
   }
-  header.intro-header:before {
+  /* header.intro-header:before {
     content: ' ';
     display: block;
     position: absolute;
@@ -16,6 +16,15 @@
     width: 100%;
     height: 100%;
     opacity: 0.4;
+    background-image: url('{{ with $header_img }}{{- . -}}{{ end }}');
+    background-repeat: no-repeat;
+    background-position: 50% {{ $image_y }};
+    background-size: cover;
+  } */
+  .img-header {
+    display: block;
+    width: 100%;
+    height: 300px;
     background-image: url('{{ with $header_img }}{{- . -}}{{ end }}');
     background-repeat: no-repeat;
     background-position: 50% {{ $image_y }};
@@ -46,6 +55,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="img-header">
+    <p></p>
   </div>
 </header>
 {{ else }}
